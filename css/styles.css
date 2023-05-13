@@ -95,6 +95,8 @@ body {
 
 .main-header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .page-header-container {
@@ -171,7 +173,10 @@ body {
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/hero-img.jpg);
-  background-size: contain;
+  max-width: 1440px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .main-title {
@@ -223,7 +228,7 @@ body {
   width: calc((100% - 72px) / 4);
 }
 
-.feature-icon {
+.feature-item-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -232,8 +237,6 @@ body {
   border-radius: 4px;
   background-color: var(--fourth-text-color);
   margin-bottom: 8px;
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 
 .title {
@@ -255,7 +258,7 @@ body {
 .section-title {
   font-weight: 700;
   font-size: 36px;
-  line-height: 1.11;
+  line-height: 1.1;
   letter-spacing: 0.02em;
   text-align: center;
   text-transform: capitalize;
@@ -276,7 +279,7 @@ body {
 }
 
 .team-card-content {
-  padding: 32px 16px;
+  padding: 32px 0;
 }
 
 .team-card {
@@ -333,11 +336,13 @@ body {
   height: 88px;
   border: 1px solid var(--fifth-text-color);
   border-radius: 4px;
+  color: var(--fifth-text-color);
 }
 
 .company-link:hover,
 .company-link:focus {
   border: 1px solid var(--accent-color);
+  color: var(--accent-color);
 }
 
 .company-icon {
@@ -346,7 +351,7 @@ body {
 
 .company-link:hover .company-icon,
 .company-link:focus .company-icon {
-  fill: var(--accent-color);
+  fill: currentColor;
 }
 
 /* FOOTER */
@@ -359,7 +364,11 @@ body {
 
 .footer-container {
   display: flex;
-  gap: 120px;
+  align-items: baseline;
+}
+
+.footer-left {
+  margin-right: 120px;
 }
 
 .footer-link {
@@ -367,7 +376,7 @@ body {
   margin-bottom: 16px;
 }
 
-.footer-description {
+.footer-description-left {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -375,16 +384,7 @@ body {
   width: 264px;
 }
 
-.footer-description {
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--fourth-text-color);
-  width: 264px;
-}
-
-.footer-title {
-  display: flex;
+.footer-description-right {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -459,8 +459,12 @@ body {
   width: calc((100% - 48px) / 3);
 }
 
-.portfolio-card:hover,
-.portfolio-card:focus {
+.portfolio-link {
+  display: block;
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
